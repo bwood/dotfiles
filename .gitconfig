@@ -1,0 +1,9 @@
+[user]
+	email = bwood@berkeley.edu
+	name = Brian
+[checkout]
+	defaultRemote = origin
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
