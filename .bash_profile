@@ -1,7 +1,4 @@
-# Python
-# -tr sort by time an reverse it to get the newest at the end, otherwise 3.10 will come before 3.9.
-PYTHON_VER=$(ls -1 -tr /Users/bwood/Library/Python |tail -1)
-export PATH="/usr/local/opt/php@8.0/bin:/usr/local/bin/python3:$HOME/Library/Python/$PYTHON_VER/bin:$HOME/bin:$HOME/.emacs.d/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/php@8.0/bin:/usr/local/bin/python3:$HOME/bin:$HOME/.emacs.d/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH"
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
