@@ -102,6 +102,8 @@ git-unshallow() {
 }
 alias gu=git-unshallow
 
+# Manage dotfiles.  See https://www.anand-iyer.com/blog/2018/a-simpler-way-to-manage-your-dotfiles.html and deft.
+alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 #alias codercs='phpcs --standard=/Users/bwood/.drush/coder/coder_sniffer/Drupal/ruleset.xml --extensions=php,module,inc,install,test,profile,theme'
 
