@@ -19,14 +19,13 @@ export TERM="xterm-color"
 #aliases
 alias ll="ls -laFG"
 
+export AWS_PROFILE=bwood
 ##############
 ## Include other function files.
 #############
-. ~/code/dotfiles/dotfiles-wps/src/.bash_wps.sh
-. ~/code/dotfiles/dotfiles-bwood/.bash_wps_bwood_mbp2019.sh
-export AWS_PROFILE=bwood
-. ~/code/dotfiles/dotfiles-bwood/.bash_aws.sh
-
+. $HOME/.bash_wps.sh
+. $HOME/code/dotfiles/dotfiles-bwood/.bash_aws.sh
+. $HOME/.dotfiles-wps/src/.bash_wps.sh
 # Allow php debugging from CLI
 export XDEBUG_CONFIG="idekey=PHPSTORM"  
 
