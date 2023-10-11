@@ -1,4 +1,4 @@
-export PATH="/usr/local/opt/php@8.0/bin:/usr/local/bin/python3:$HOME/bin:$HOME/.emacs.d/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew:/opt/homebrew/opt/curl/bin:/usr/local/bin/brew:/usr/local/opt/php@8.0/bin:/usr/local/bin/python3:$HOME/bin:$HOME/.emacs.d/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH"
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
@@ -128,6 +128,14 @@ alias sudo='sudo -u la-bwood'
 # brew: bash-completion
 #[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 [ -f "/usr/local/etc/bash_completion" ] && . "/usr/local/etc/bash_completion"
+
+# homebrew
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
 # Python3
 alias pip=pip3
