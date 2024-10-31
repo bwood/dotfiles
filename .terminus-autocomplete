@@ -53,6 +53,10 @@ _terminus()
             opts="${opts} "
             ;;
 
+            art:list)
+            opts="${opts} --format --fields --field"
+            ;;
+
             auth:login)
             opts="${opts} --machine-token --email"
             ;;
@@ -146,11 +150,15 @@ _terminus()
             ;;
 
             env:clone-content)
-            opts="${opts} --cc --db-only --files-only --updatedb"
+            opts="${opts} --cc --db-only --files-only --updatedb --from-url --to-url"
             ;;
 
             env:code-log)
             opts="${opts} --format --fields --field"
+            ;;
+
+            env:code-rebuild)
+            opts="${opts} "
             ;;
 
             env:commit)
@@ -177,12 +185,16 @@ _terminus()
             opts="${opts} --period --datapoints --format --fields --field"
             ;;
 
+            env:rotate-random-seed)
+            opts="${opts} "
+            ;;
+
             env:view)
             opts="${opts} --print"
             ;;
 
             env:wake)
-            opts="${opts} "
+            opts="${opts} --retry --delay"
             ;;
 
             env:wipe)
@@ -227,6 +239,10 @@ _terminus()
 
             local:commitAndPush)
             opts="${opts} "
+            ;;
+
+            local:dockerize)
+            opts="${opts} --overwrite"
             ;;
 
             local:getLiveDB)
@@ -290,6 +306,10 @@ _terminus()
             ;;
 
             new-relic:info)
+            opts="${opts} --format --fields --field"
+            ;;
+
+            org:info)
             opts="${opts} --format --fields --field"
             ;;
 
@@ -362,7 +382,7 @@ _terminus()
             ;;
 
             remote:drush)
-            opts="${opts} --progress"
+            opts="${opts} --progress --retry"
             ;;
 
             remote:rsync)
@@ -370,7 +390,35 @@ _terminus()
             ;;
 
             remote:wp)
-            opts="${opts} --progress"
+            opts="${opts} --progress --retry"
+            ;;
+
+            secret:org:delete)
+            opts="${opts} --env --debug"
+            ;;
+
+            secret:org:list)
+            opts="${opts} --debug --format --fields --field"
+            ;;
+
+            secret:org:set)
+            opts="${opts} --type --scope --env --debug"
+            ;;
+
+            secret:site:delete)
+            opts="${opts} --debug"
+            ;;
+
+            secret:site:list)
+            opts="${opts} --debug --format --fields --field"
+            ;;
+
+            secret:site:local-generate)
+            opts="${opts} --filepath --format --fields --field"
+            ;;
+
+            secret:site:set)
+            opts="${opts} --type --scope --debug"
             ;;
 
             self:clear-cache)
@@ -578,11 +626,11 @@ _terminus()
             ;;
 
             workflow:list)
-            opts="${opts} --format --fields --field"
+            opts="${opts} --all --format --fields --field"
             ;;
 
             workflow:wait)
-            opts="${opts} --start --max"
+            opts="${opts} --start --commit --max"
             ;;
 
             workflow:watch)
@@ -599,7 +647,7 @@ _terminus()
 
     # completing for a command
     if [[ $cur == $com ]]; then
-        coms="_complete aliases art completion help list snowman auth:login auth:logout auth:whoami backup:automatic:disable backup:automatic:enable backup:automatic:info backup:create backup:get backup:info backup:list backup:restore branch:list connection:info connection:set dashboard:view domain:add domain:dns domain:list domain:lookup domain:primary:add domain:primary:remove domain:remove env:clear-cache env:clone-content env:code-log env:commit env:deploy env:diffstat env:info env:list env:metrics env:view env:wake env:wipe https:info https:remove https:set import:complete import:database import:files import:site instrument:set local:clone local:commitAndPush local:getLiveDB local:getLiveFiles lock:disable lock:enable lock:info machine-token:delete machine-token:delete-all machine-token:list multidev:create multidev:delete multidev:list multidev:merge-from-dev multidev:merge-to-dev new-relic:disable new-relic:enable new-relic:info org:list org:people:add org:people:list org:people:remove org:people:role org:site:list org:site:remove org:upstream:list owner:set payment-method:add payment-method:list payment-method:remove plan:info plan:list plan:set redis:disable redis:enable remote:drush remote:rsync remote:wp self:clear-cache self:config:dump self:console self:info self:plugin:create self:plugin:install self:plugin:list self:plugin:migrate self:plugin:reload self:plugin:search self:plugin:uninstall self:plugin:update self:update service-level:set site:autopilot:activate site:autopilot:deactivate site:autopilot:deployment-destination site:autopilot:env-sync site:autopilot:env-sync:disable site:autopilot:env-sync:enable site:autopilot:frequency site:create site:delete site:info site:list site:lookup site:org:add site:org:list site:org:remove site:team:add site:team:list site:team:remove site:team:role site:upstream:clear-cache site:upstream:set solr:disable solr:enable ssh-key:add ssh-key:list ssh-key:remove tag:add tag:list tag:remove upstream:info upstream:list upstream:updates:apply upstream:updates:list upstream:updates:status workflow:info:logs workflow:info:operations workflow:info:status workflow:list workflow:wait workflow:watch"
+        coms="_complete aliases art completion help list snowman art:list auth:login auth:logout auth:whoami backup:automatic:disable backup:automatic:enable backup:automatic:info backup:create backup:get backup:info backup:list backup:restore branch:list connection:info connection:set dashboard:view domain:add domain:dns domain:list domain:lookup domain:primary:add domain:primary:remove domain:remove env:clear-cache env:clone-content env:code-log env:code-rebuild env:commit env:deploy env:diffstat env:info env:list env:metrics env:rotate-random-seed env:view env:wake env:wipe https:info https:remove https:set import:complete import:database import:files import:site instrument:set local:clone local:commitAndPush local:dockerize local:getLiveDB local:getLiveFiles lock:disable lock:enable lock:info machine-token:delete machine-token:delete-all machine-token:list multidev:create multidev:delete multidev:list multidev:merge-from-dev multidev:merge-to-dev new-relic:disable new-relic:enable new-relic:info org:info org:list org:people:add org:people:list org:people:remove org:people:role org:site:list org:site:remove org:upstream:list owner:set payment-method:add payment-method:list payment-method:remove plan:info plan:list plan:set redis:disable redis:enable remote:drush remote:rsync remote:wp secret:org:delete secret:org:list secret:org:set secret:site:delete secret:site:list secret:site:local-generate secret:site:set self:clear-cache self:config:dump self:console self:info self:plugin:create self:plugin:install self:plugin:list self:plugin:migrate self:plugin:reload self:plugin:search self:plugin:uninstall self:plugin:update self:update service-level:set site:autopilot:activate site:autopilot:deactivate site:autopilot:deployment-destination site:autopilot:env-sync site:autopilot:env-sync:disable site:autopilot:env-sync:enable site:autopilot:frequency site:create site:delete site:info site:list site:lookup site:org:add site:org:list site:org:remove site:team:add site:team:list site:team:remove site:team:role site:upstream:clear-cache site:upstream:set solr:disable solr:enable ssh-key:add ssh-key:list ssh-key:remove tag:add tag:list tag:remove upstream:info upstream:list upstream:updates:apply upstream:updates:list upstream:updates:status workflow:info:logs workflow:info:operations workflow:info:status workflow:list workflow:wait workflow:watch"
 
         COMPREPLY=($(compgen -W "${coms}" -- ${cur}))
         __ltrim_colon_completions "$cur"
