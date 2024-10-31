@@ -1,4 +1,4 @@
-export PATH="/opt/homebrew:/opt/homebrew/opt/curl/bin:/usr/local/bin/brew:/usr/local/opt/php@8.0/bin:/usr/local/bin/python3:$HOME/bin:$HOME/.emacs.d/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew:/usr/local/opt/php@8.0/bin:/usr/local/bin/python3:$HOME/bin:$HOME/.emacs.d/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH"
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
@@ -32,18 +32,11 @@ export XDEBUG_CONFIG="idekey=PHPSTORM"
 #########
 ## GIT##
 #########
-# bash-git-prompt
-# https://github.com/magicmonty/bash-git-prompt
-if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
-  source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
+# Git prompt
+if [ -f "/opt/homebrew/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR="/opt/homebrew/opt/bash-git-prompt/share"
+  source "/opt/homebrew/opt/bash-git-prompt/share/gitprompt.sh"
 fi
-# Set config variables first
-# GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_SHOW_UPSTREAM=1
-#GIT_PROMPT_THEME=Evermeet
-GIT_PROMPT_THEME=Custom
-GIT_PROMPT_THEME_FILE=$HOME/.git-prompt-colors.sh
 
 #git aliases
 alias gs='git status'
@@ -150,6 +143,7 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/Users/bwood/Library/Python/$PYTHON_VER/bin/
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # this should come last
 # https://github.com/bamarni/symfony-console-autocomplete#prerequisites
