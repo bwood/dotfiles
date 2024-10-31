@@ -7,3 +7,7 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[core]
+	excludesfile = /Users/bwood/.gitignore
+[safe]
+	directory = /Users/bwood
