@@ -158,3 +158,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Lando
 export LANDO_SITES_DIR=$HOME/Sites/lando
+
+# Quiet MacOS's zsh message!
+export BASH_SILENCE_DEPRECATION_WARNING=1
