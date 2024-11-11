@@ -1,4 +1,4 @@
-export PATH="/opt/homebrew:/usr/local/opt/php@8.0/bin:/usr/local/bin/python3:$HOME/bin:$HOME/.emacs.d/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew:/usr/local/opt/php@8.0/bin:/usr/local/bin/python3:$HOME/bin:$HOME/.emacs.d/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
 
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
@@ -161,3 +161,6 @@ export LANDO_SITES_DIR=$HOME/Sites/lando
 
 # Quiet MacOS's zsh message!
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Configure current shell for Rust.
+. "$HOME/.cargo/env"
